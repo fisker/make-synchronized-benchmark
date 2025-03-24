@@ -29,7 +29,7 @@ await runBench({
     { name: "synckit", fn: synckit },
     { name: "make-synchronized", fn: makeSynchronized },
     { name: "make-synchronized@0.3", fn: makeSynchronized03 },
-    { name: "sync-threads (CommonJS)", fn: syncThreads },
+    { name: "sync-threads (CommonJS)", fn: syncThreadsCjs },
     { name: "synckit (CommonJS)", fn: synckitCjs },
     { name: "make-synchronized (CommonJS)", fn: makeSynchronizedCjs },
     { name: "make-synchronized@0.3 (CommonJS)", fn: makeSynchronized03Cjs },
