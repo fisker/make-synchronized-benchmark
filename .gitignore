@@ -1,5 +1,7 @@
 /node_modules
 /yarn-error.log
 /yarn.lock
-/.yarn
-!/.yarn/releases
+.yarn/cache/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.js
