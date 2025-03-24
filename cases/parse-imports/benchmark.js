@@ -21,8 +21,8 @@ await runBench({
     { name: "parseImportsSync", fn: parseImportsSync },
     { name: "parseImports", fn: parseImports, isAsync: true },
     { name: "synckit", fn: synckit },
-    { name: "makeSynchronized", fn: makeSynchronized },
-    { name: "makeSynchronized 0.3", fn: makeSynchronized3 },
+    { name: "make-synchronized", fn: makeSynchronized },
+    { name: "make-synchronized@0.3", fn: makeSynchronized3 },
   ],
   run: ({ isAsync, fn }) =>
     isAsync ? fn(code).then((x) => x.length) : fn(code).length,

@@ -1,22 +1,21 @@
 import assert from "node:assert/strict";
-import * as prettier from "prettier";
-import makeSynchronized3 from "./make-synchronized-0-3/make-synchronized.js";
-import makeSynchronized from "./make-synchronized/make-synchronized.js";
+import makeSynchronized3 from "./make-synchronized-0-3.js";
+import makeSynchronized from "./make-synchronized.js";
 import synckit from "./synckit/synckit.js";
 import fs from "node:fs/promises";
 import { runBench } from "../../utilities/utilities.js";
+import implementation from "./implementation.js";
 
 const code = await fs.readFile(new URL(import.meta.url), "utf8");
-const prettierFormat = (code) => prettier.format(code, { parser: "meriyah" });
-const expected = await prettierFormat(code);
+const expected = await implementation(code);
 
 await runBench({
   name: "prettier.format()",
   cases: [
-    { name: "prettier", fn: prettierFormat, isAsync: true },
+    { name: "prettier.format()", fn: implementation, isAsync: true },
     { name: "synckit", fn: synckit },
-    { name: "makeSynchronized", fn: makeSynchronized },
-    { name: "makeSynchronized 0.3", fn: makeSynchronized3 },
+    { name: "make-synchronized", fn: makeSynchronized },
+    { name: "make-synchronized@0.3", fn: makeSynchronized3 },
   ],
   run: ({ fn }) => fn(code),
   expected,

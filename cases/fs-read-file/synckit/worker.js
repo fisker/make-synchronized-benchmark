@@ -1,4 +1,4 @@
 import { runAsWorker } from "synckit";
-import fs from "node:fs/promises";
+import implementation from "../implementation.js";
 
-runAsWorker((file, encoding) => fs.readFile(file, encoding));
+runAsWorker(implementation);

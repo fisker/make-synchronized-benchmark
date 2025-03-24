@@ -1,4 +1,4 @@
 import { runAsWorker } from "synckit";
-import * as prettier from "prettier";
+import implementation from "../implementation.js";
 
-runAsWorker((value) => Promise.resolve(value));
+runAsWorker(implementation);

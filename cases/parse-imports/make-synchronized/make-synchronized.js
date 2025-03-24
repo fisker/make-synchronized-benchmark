@@ -3,7 +3,7 @@
 import makeSynchronized from "make-synchronized";
 
 // ESLint doesn't support async rules
-export default makeSynchronized(import.meta.url, async (imprt) => {
+export default makeSynchronized(import.meta, async (imprt) => {
   const { parseImports } = await import("parse-imports");
   try {
     return [...(await parseImports(imprt))];

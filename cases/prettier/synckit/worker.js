@@ -1,4 +1,4 @@
 import { runAsWorker } from "synckit";
-import * as prettier from "prettier";
+import implementation from "../implementation.js";
 
-runAsWorker((code) => prettier.format(code, { parser: "meriyah" }));
+runAsWorker(implementation);
