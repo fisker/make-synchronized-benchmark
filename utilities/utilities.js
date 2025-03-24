@@ -5,7 +5,7 @@ import { setFlagsFromString } from "node:v8";
 import { runInNewContext } from "node:vm";
 
 let gc = getGc();
-async function runBench({ name, cases, run, expected }) {
+async function runBench({ name, cases, run, expected, benchmarkOptions }) {
   const bench = new Bench({
     name: `Case: ${name}`,
     setup: (_task, mode) => {
@@ -14,6 +14,7 @@ async function runBench({ name, cases, run, expected }) {
         gc();
       }
     },
+    ...benchmarkOptions,
   });
 
   for (let testCase of cases) {
