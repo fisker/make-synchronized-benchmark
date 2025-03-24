@@ -16,7 +16,7 @@ const require = createRequire(import.meta.url);
 const makeSynchronizedCjs = require("./tests/make-synchronized.cjs");
 const makeSynchronized03Cjs = require("./tests/make-synchronized-0-3.cjs");
 const native = require("./tests/native.cjs");
-const syncThreads = require("./tests/sync-threads.cjs");
+const syncThreadsCjs = require("./tests/sync-threads.cjs");
 const synckitCjs = require("./tests/synckit.cjs");
 
 const value = Math.random();
@@ -27,11 +27,11 @@ await runBench({
     // { name: "deasync", fn:deasync },
     { name: "native", fn: native },
     { name: "synckit", fn: synckit },
-    { name: "sync-threads", fn: syncThreads },
-    { name: "synckit (CommonJS)", fn: synckitCjs },
     { name: "make-synchronized", fn: makeSynchronized },
-    { name: "make-synchronized (CommonJS)", fn: makeSynchronizedCjs },
     { name: "make-synchronized@0.3", fn: makeSynchronized03 },
+    { name: "sync-threads (CommonJS)", fn: syncThreads },
+    { name: "synckit (CommonJS)", fn: synckitCjs },
+    { name: "make-synchronized (CommonJS)", fn: makeSynchronizedCjs },
     { name: "make-synchronized@0.3 (CommonJS)", fn: makeSynchronized03Cjs },
   ],
   run: ({ fn }) => fn(filename),
