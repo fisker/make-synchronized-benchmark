@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch --expose-gc index.js",
-    "test": "node --expose-gc index.js"
+    "test": "node index.js",
+    "format": "prettier . --write"
   },
   "dependencies": {
     "@kaciras/deasync": "1.1.0",
