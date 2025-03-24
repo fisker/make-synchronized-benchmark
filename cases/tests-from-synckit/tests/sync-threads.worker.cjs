@@ -1,5 +1,5 @@
-const fs = require('node:fs')
+const fs = require("node:fs");
 
-const { runAsWorker } = require('sync-threads')
+const { runAsWorker } = require("sync-threads");
 
-runAsWorker(filename => fs.promises.readFile(filename, 'utf8'))
+runAsWorker((filename) => fs.promises.readFile(filename, "utf8"));

@@ -1,12 +1,12 @@
-import { createRequire } from 'node:module'
+import { createRequire } from "node:module";
 
-import { createSyncFn } from 'synckit'
+import { createSyncFn } from "synckit";
 
-const cjsRequire = createRequire(import.meta.url)
+const cjsRequire = createRequire(import.meta.url);
 
 /**
  * @type {() => string}
  */
-const syncFn = createSyncFn(cjsRequire.resolve('./synckit.worker'))
+const syncFn = createSyncFn(cjsRequire.resolve("./synckit.worker"));
 
-export default syncFn
+export default syncFn;

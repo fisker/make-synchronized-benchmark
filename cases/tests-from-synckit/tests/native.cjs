@@ -1,3 +1,3 @@
-const fs = require('node:fs')
+const fs = require("node:fs");
 
-module.exports = filename => fs.readFileSync(filename, 'utf8')
+module.exports = (filename) => fs.readFileSync(filename, "utf8");

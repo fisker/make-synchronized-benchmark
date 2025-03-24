@@ -1,5 +1,5 @@
-import fs from 'node:fs'
+import fs from "node:fs";
 
-import { runAsWorker } from 'synckit'
+import { runAsWorker } from "synckit";
 
-runAsWorker(filename => fs.promises.readFile(filename, 'utf8'))
+runAsWorker((filename) => fs.promises.readFile(filename, "utf8"));

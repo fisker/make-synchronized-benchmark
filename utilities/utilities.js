@@ -17,7 +17,7 @@ async function runBench({ name, cases, run, expected }) {
   for (let testCase of cases) {
     const { isAsync } = testCase;
     const fn = run ? () => run(testCase) : testCase.fn;
-    const name = `[${isAsync ? "ASYNC" : "SYNC "}] ${testCase.name}`
+    const name = `[${isAsync ? "ASYNC" : "SYNC "}] ${testCase.name}`;
     if (isAsync) {
       assert.equal(await fn(), expected, name);
     } else {
