@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "node --watch --expose-gc index.js",
+    "dev": "node --watch index.js",
     "test": "node index.js",
     "format": "prettier . --write"
   },

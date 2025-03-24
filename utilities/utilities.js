@@ -5,17 +5,8 @@ import { table } from "console-table-without-index";
 import { setFlagsFromString } from "node:v8";
 import { runInNewContext } from "node:vm";
 
-let gc = getGc();
 async function runBench({ name, cases, run, expected }) {
-  const bench = new Bench({
-    name: `Case: ${name}`,
-    setup: (_task, mode) => {
-      // Run the garbage collector before warmup at each cycle
-      if (mode === "warmup") {
-        gc();
-      }
-    },
-  });
+  const bench = new Bench({ name: `Case: ${name}` });
 
   for (let testCase of cases) {
     const { isAsync } = testCase;
@@ -34,18 +25,6 @@ async function runBench({ name, cases, run, expected }) {
   console.log(styleText.blue(bench.name));
   await bench.run();
   console.table(bench.table());
-}
-
-function getGc() {
-  if (globalThis.gc) {
-    return globalThis.gc;
-  }
-
-  let gc;
-  setFlagsFromString("--expose_gc");
-  gc = runInNewContext("gc");
-  setFlagsFromString("--no-expose-gc");
-  return gc;
 }
 
 export { runBench };
