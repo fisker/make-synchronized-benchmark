@@ -3,8 +3,9 @@ import fs from "node:fs/promises";
 const directory = new URL("./cases/", import.meta.url);
 
 for (const name of new Set([
-  // I want this on top
+  // I want these on top
   "identity",
+  "error",
   ...(await fs.readdir(directory)),
 ])) {
   const url = new URL(`./${name}/benchmark.js`, directory);
