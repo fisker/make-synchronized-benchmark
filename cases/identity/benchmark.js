@@ -20,7 +20,7 @@ await runBench({
     { name: "make-synchronous", fn: makeSynchronous },
     // Somehow can't run
     // { name: "await-sync", fn: awaitSync },
-    { name: "sync-threads", fn: syncThreads },
+    // { name: "sync-threads", fn: syncThreads },
   ],
   run: ({ fn }) => fn(value),
   expected: value,
