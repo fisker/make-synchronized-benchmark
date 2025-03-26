@@ -26,3 +26,15 @@ await runBench({
   run: ({ fn }) => fn(code),
   expected,
 });
+
+await runBench({
+  name: "prettier.format()[import inside function call]",
+  cases: [
+    { name: "prettier.format()", fn: implementation, isAsync: true },
+    { name: "make-synchronous", fn: makeSynchronous },
+    { name: "make-synchronized", fn: makeSynchronized },
+    { name: "make-synchronized@0.3", fn: makeSynchronized3 },
+  ],
+  run: ({ fn }) => fn(code),
+  expected,
+});
