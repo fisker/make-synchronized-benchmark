@@ -24,7 +24,7 @@ await runBench({
   benchmarkOptions: {
     iterations: 20,
     warmup: false,
-  }
+  },
 });
 
 const value = Math.random();
@@ -39,5 +39,5 @@ await runBench({
   benchmarkOptions: {
     iterations: 20,
     warmup: false,
-  }
+  },
 });

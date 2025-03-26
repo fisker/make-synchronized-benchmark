@@ -21,7 +21,7 @@ const synckitCjs = require("./tests/synckit.cjs");
 
 const value = Math.random();
 
-console.warn("⚠️ The result is unreliable")
+console.warn("⚠️ The result is unreliable");
 
 await runBench({
   name: "suit from synckit",
