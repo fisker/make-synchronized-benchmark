@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
-import makeSynchronized from "./make-synchronous.js";
-import makeSynchronous from "./make-synchronized.js";
+import makeSynchronous from "./make-synchronous.js";
+import makeSynchronized from "./make-synchronized.js";
 import { runBench } from "../../utilities/utilities.js";
 import implementation from "./implementation.js";
 
