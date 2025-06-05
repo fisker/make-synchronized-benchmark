@@ -15,11 +15,12 @@
     "make-synchronized": "0.7.2",
     "make-synchronized-0-3": "npm:make-synchronized@0.3.1",
     "make-synchronous": "1.0.0",
-    "node-style-text": "0.0.7",
+    "node-style-text": "0.0.8",
     "parse-imports": "2.2.1",
     "prettier": "3.5.3",
     "sync-threads": "1.0.1",
-    "synckit": "0.10.3",
+    "synckit": "0.11.8",
     "tinybench": "4.0.1"
-  }
+  },
+  "packageManager": "yarn@4.9.2"
 }
