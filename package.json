@@ -14,7 +14,7 @@
     "console-table-without-index": "0.1.1",
     "make-synchronized": "0.7.2",
     "make-synchronized-0-3": "npm:make-synchronized@0.3.1",
-    "make-synchronous": "2.0.0",
+    "make-synchronous": "1.0.0",
     "node-style-text": "0.0.8",
     "parse-imports": "2.2.1",
     "prettier": "3.5.3",
