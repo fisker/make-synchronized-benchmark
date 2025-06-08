@@ -1,6 +1,4 @@
 import { runAsWorker } from "synckit";
-import { importFresh } from "../../utilities/utilities.js";
-
-const implementation = await importFresh("./implementation.js");
+import implementation from "./implementation.js";
 
 runAsWorker(implementation);

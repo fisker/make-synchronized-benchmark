@@ -48,8 +48,8 @@ function getGc() {
   return gc;
 }
 
-function importFresh(file) {
-  return import(`${file}?_=${Math.random() * performance.now()}`);
+function freshUrl(file) {
+  return `${file}?_=${Math.random() * performance.now()}`;
 }
 
-export { runBench, importFresh };
+export { runBench, freshUrl };

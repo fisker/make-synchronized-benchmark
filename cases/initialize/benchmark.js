@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { runBench, importFresh } from "../../utilities/utilities.js";
+import { runBench, freshUrl } from "../../utilities/utilities.js";
 import implementation from "./implementation.js";
 
 const libs = [
@@ -9,7 +9,7 @@ const libs = [
   { name: "make-synchronous", file: "./make-synchronous.js" },
 ].map(({ name, file }) => ({
   name,
-  fn: () => importFresh(file),
+  fn: () => import(freshUrl(file)),
   isAsync: true,
 }));
 
