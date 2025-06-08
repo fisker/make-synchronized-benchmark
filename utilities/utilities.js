@@ -48,7 +48,7 @@ function getGc() {
   return gc;
 }
 
-function importFresh(url) {
+function importFresh(file) {
   return import(`${file}?_=${Math.random() * performance.now()}`);
 }
 
