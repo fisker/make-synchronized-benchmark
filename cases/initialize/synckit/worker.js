@@ -1,4 +1,7 @@
 import { runAsWorker } from "synckit";
-import implementation from "../implementation.js";
+
+const implementation = await import(
+  `implementation.js?_=${Math.random() * performance.now()}`
+);
 
 runAsWorker(implementation);

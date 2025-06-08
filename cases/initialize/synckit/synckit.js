@@ -1,3 +1,6 @@
 import { createSyncFn } from "synckit";
 
-export default createSyncFn(new URL("./worker.js", import.meta.url).href);
+export default createSyncFn(
+  new URL(`./worker.js?_=${Math.random() * performance.now()}`, import.meta.url)
+    .href,
+);

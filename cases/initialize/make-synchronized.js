@@ -1,4 +1,7 @@
 import makeSynchronized from "make-synchronized";
-import implementation from "./implementation.js";
+
+const implementation = await import(
+  `implementation.js?_=${Math.random() * performance.now()}`
+);
 
 export default makeSynchronized(import.meta, implementation);
