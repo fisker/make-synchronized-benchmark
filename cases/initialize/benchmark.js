@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { runBench } from "../../utilities/utilities.js";
+import { runBench, importFresh } from "../../utilities/utilities.js";
 import implementation from "./implementation.js";
 
 const libs = [
@@ -9,7 +9,7 @@ const libs = [
   { name: "make-synchronous", file: "./make-synchronous.js" },
 ].map(({ name, file }) => ({
   name,
-  fn: () => import(`${file}?_=${Math.random() * performance.now()}`),
+  fn: () => importFresh(file),
   isAsync: true,
 }));
 
