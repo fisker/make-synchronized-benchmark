@@ -19,7 +19,7 @@
     "parse-imports": "2.2.1",
     "prettier": "3.5.3",
     "sync-threads": "1.0.1",
-    "synckit": "0.11.8",
+    "synckit": "0.11.11",
     "tinybench": "4.0.1"
   },
   "packageManager": "yarn@4.9.2"
